@@ -1,6 +1,6 @@
 {
   "name": "nuxt-content-mermaid",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "mermaid plugin for @nuxt/content",
   "repository": "ItsuoSano/nuxt-content-mermaid",
   "license": "MIT",
