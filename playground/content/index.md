@@ -28,6 +28,8 @@ quadrantChart
 
 ## graph
 
+::div{style="width: content-fit" id="test"}
+
 ```mermaid
 graph LR;
     A--> B & C & D;
@@ -36,5 +38,7 @@ graph LR;
     D--> A & E;
     E--> B & C & D;
 ```
+
+::
 
 123

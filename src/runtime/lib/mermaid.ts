@@ -55,6 +55,8 @@ export const createMermaidNodes = async (targetNodes: NodeData[]) => {
       { code, index, options: nuxtMermaidConfig.mermaidConfig }
     );
 
+    page.close();
+
     if (!result.success) {
       logger.error(result.value);
       continue;
@@ -62,16 +64,10 @@ export const createMermaidNodes = async (targetNodes: NodeData[]) => {
 
     parent.children![index] = {
       type: "element",
-      tag: "div",
-      children: [
-        {
-          type: "element",
-          tag: "nuxt-content-mermaid",
-          props: {
-            "svg-content": result.value.svg,
-          },
-        },
-      ],
+      tag: "nuxt-content-mermaid",
+      props: {
+        "svg-content": result.value.svg,
+      },
     };
   }
 
