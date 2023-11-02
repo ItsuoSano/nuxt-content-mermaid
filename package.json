@@ -2,7 +2,7 @@
   "name": "nuxt-content-mermaid",
   "version": "0.1.1",
   "description": "mermaid plugin for @nuxt/content",
-  "repository": "ItsuoSano/my-module",
+  "repository": "ItsuoSano/nuxt-content-mermaid",
   "license": "MIT",
   "type": "module",
   "exports": {
