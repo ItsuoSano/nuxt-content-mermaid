@@ -3,7 +3,7 @@ import { launch } from "puppeteer";
 import { useRuntimeConfig } from "#imports";
 import { createRequire } from "module";
 import type { Mermaid } from "mermaid";
-import { useLogger } from "@nuxt/kit";
+import consola from "consola";
 
 export type NodeData = { code: string; parent: MarkdownNode; index: number };
 
@@ -18,7 +18,6 @@ export const createMermaidNodes = async (targetNodes: NodeData[]) => {
   const nuxtMermaidConfig = useRuntimeConfig().public.nuxtMermaid;
 
   const url = nuxtMermaidConfig.puppeteerHtmlPath;
-  const logger = useLogger("nuxt-content-mermaid");
   for (const { code, index, parent } of targetNodes) {
     const page = await browser.newPage();
     await page.goto(url);
@@ -58,7 +57,7 @@ export const createMermaidNodes = async (targetNodes: NodeData[]) => {
     page.close();
 
     if (!result.success) {
-      logger.error(result.value);
+      consola.error("nuxt-content-mermaid:" + result.value);
       continue;
     }
 
